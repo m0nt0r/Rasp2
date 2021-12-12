@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "575035458958",
+    "project_id": "my-raspisanie",
+    "storage_bucket": "my-raspisanie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575035458958:android:1e36a0a3c777194937d0df",
+        "android_client_info": {
+          "package_name": "com.example.rasp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575035458958-4qhl2dhnlf9r71kn7hb97kls7ch2o45d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6ZMeIXIJHulWO1BZxlEs_6OffvJJbFh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575035458958-4qhl2dhnlf9r71kn7hb97kls7ch2o45d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

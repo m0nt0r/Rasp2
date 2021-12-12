@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="44dp">
+
+        <ScrollView
+            android:layout_width="421dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edWeek"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Day"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/edDay"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Time"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/edTime"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Podgrup"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/edpodgrup"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Prepod"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/edprep"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Cabinet"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/edcab"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Para"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/edpara"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Week"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:onClick="onClickSave"
+                    android:text="Save" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:onClick="onClickRead"
+                    android:text="Read" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
