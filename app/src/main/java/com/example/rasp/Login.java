@@ -92,7 +92,6 @@ public class Login extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
-                    int a;
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     String uid = user.getUid();
                     ValueEventListener vListener = new ValueEventListener() {
@@ -106,9 +105,11 @@ public class Login extends AppCompatActivity {
                                 if(user.uid.equals(uid) && user.level.equals("1"))
                                 {
                                     Toast.makeText(getApplicationContext(),"Admin",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),uid,Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(Login.this, menu_admin.class);
                                     startActivity(i);
                                     finish();
+                                    break;
                                 }
                                 else {
                                     Toast.makeText(getApplicationContext(),"User",Toast.LENGTH_SHORT).show();
