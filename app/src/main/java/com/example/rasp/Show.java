@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Show extends AppCompatActivity {
-    private TextView tvcab,tvprep,tvTime;
+    private TextView tvcab,tvprep,tvTime,tvpred;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class Show extends AppCompatActivity {
         tvTime = findViewById(R.id.tvTime);
         tvcab = findViewById(R.id.tvcab);
         tvprep = findViewById(R.id.tvprep);
+        tvpred = findViewById(R.id.tvpred);
     }
     private void getIntentMain()
     {
@@ -30,6 +31,7 @@ public class Show extends AppCompatActivity {
             tvcab.setText(i.getStringExtra("newt_cab"));
             tvprep.setText(i.getStringExtra("newt_prep"));
             tvTime.setText(i.getStringExtra("newt_time"));
+            tvpred.setText(i.getStringExtra("newt_pred"));
         }
     }
 }

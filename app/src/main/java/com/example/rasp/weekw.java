@@ -17,20 +17,33 @@ public class weekw extends AppCompatActivity {
     public void onClickUp(View view)
     {
         Intent i = getIntent();
+        String kurs = i.getStringExtra("kurs");
+        String grup = i.getStringExtra("grup");
         String podgrup = i.getStringExtra("podgrup");
+        String level = i.getStringExtra("level");
         Toast.makeText(this, podgrup, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(weekw.this, day.class);
         intent.putExtra("podgrup",podgrup);
         intent.putExtra("weekw","1");
+        intent.putExtra("kurs",kurs);
+        intent.putExtra("grup",grup);
+        intent.putExtra("level",level);
         startActivity(intent);
     }
     public void onClickDown(View view)
     {
         Intent i = getIntent();
+        String kurs = i.getStringExtra("kurs");
+        String grup = i.getStringExtra("grup");
         String podgrup = i.getStringExtra("podgrup");
+        String level = i.getStringExtra("level");
         Intent intent = new Intent(weekw.this, day.class);
         intent.putExtra("podgrup",podgrup);
         intent.putExtra("weekw","2");
+        intent.putExtra("kurs",kurs);
+        intent.putExtra("grup",grup);
+        intent.putExtra("level",level);
+
         startActivity(intent);
     }
 }

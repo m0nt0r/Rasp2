@@ -18,4 +18,12 @@ public class menu_admin extends AppCompatActivity {
         Intent i = new Intent(menu_admin.this, MainActivity.class);
         startActivity(i);
     }
+    public void onClickDel(View view)
+    {
+        Intent i = getIntent();
+        String level = i.getStringExtra("level");
+        Intent intent = new Intent(menu_admin.this, kurs.class);
+        intent.putExtra("level",level);
+        startActivity(intent);
+    }
 }

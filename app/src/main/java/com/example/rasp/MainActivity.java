@@ -2,7 +2,6 @@ package com.example.rasp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,7 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText edWeek,edDay,edTime,edpodgrup,edprep,edcab,edpara;
+    private EditText edWeek,edDay,edTime,edpodgrup,edprep,edcab,edpara, edgrup,edkurs,edpredmet;
     private DatabaseReference mDataBase;
     private String NEWT_KEY = "NEWT";
 
@@ -32,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         edprep=findViewById(R.id.edprep);
         edcab=findViewById(R.id.edcab);
         edpara=findViewById(R.id.edpara);
+        edgrup=findViewById(R.id.edgrup);
+        edkurs=findViewById(R.id.edkurs);
+        edpredmet=findViewById(R.id.edpredmet);
         mDataBase = FirebaseDatabase.getInstance().getReference(NEWT_KEY);
 
     }
@@ -45,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
         String prep = edprep.getText().toString();
         String cab = edcab.getText().toString();
         String para = edpara.getText().toString();
-        Newt newNewt = new Newt(id,week,day,time,podgrup,prep,cab,para);
+        String grup = edgrup.getText().toString();
+        String kurs = edkurs.getText().toString();
+        String predmet = edpredmet.getText().toString();
+        Newt newNewt = new Newt(id,week,day,time,podgrup,prep,cab,para,kurs,grup,predmet);
         if(!TextUtils.isEmpty(week) && !TextUtils.isEmpty(day) && !TextUtils.isEmpty(time) && !TextUtils.isEmpty(podgrup)
                 && !TextUtils.isEmpty(prep)&& !TextUtils.isEmpty(cab) && !TextUtils.isEmpty(para))
         {
@@ -57,10 +62,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Empty field", Toast.LENGTH_SHORT).show();
         }
 
-    }
-    public void onClickRead(View view)
-    {
-        Intent i = new Intent(MainActivity.this, ReadActivity.class);
-        startActivity(i);
     }
 }

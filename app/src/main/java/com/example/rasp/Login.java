@@ -86,52 +86,57 @@ public class Login extends AppCompatActivity {
     public void onClickSignIn(View view)
     {
         if(!TextUtils.isEmpty(edLogin.getText().toString()) && !TextUtils.isEmpty(edPassword.getText().toString())) {
-        }
-        mAuth.signInWithEmailAndPassword(edLogin.getText().toString(),edPassword.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful())
-                {
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    String uid = user.getUid();
-                    ValueEventListener vListener = new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot)
-                        {
-                            for(DataSnapshot ds: snapshot.getChildren())
+            mAuth.signInWithEmailAndPassword(edLogin.getText().toString(),edPassword.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful())
+                    {
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String uid1 = user.getUid();
+                        ValueEventListener vListener = new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot)
                             {
-                                User user = ds.getValue(User.class);
-                                assert user != null;
-                                if(user.uid.equals(uid) && user.level.equals("1"))
+                                for(DataSnapshot ds: snapshot.getChildren())
                                 {
-                                    Toast.makeText(getApplicationContext(),"Admin",Toast.LENGTH_SHORT).show();
-                                    Toast.makeText(getApplicationContext(),uid,Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(Login.this, menu_admin.class);
-                                    startActivity(i);
-                                    finish();
-                                    break;
-                                }
-                                else {
-                                    Toast.makeText(getApplicationContext(),"User",Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(Login.this, menu.class);
-                                    startActivity(i);
-                                    finish();
+                                    User user = ds.getValue(User.class);
+                                    assert user != null;
+                                    if(user.uid.equals(uid1) && user.level.equals("1"))
+                                    {
+                                        Toast.makeText(getApplicationContext(),"Admin",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(),uid1,Toast.LENGTH_SHORT).show();
+                                        Intent i = new Intent(Login.this, menu_admin.class);
+                                        i.putExtra("level",user.level);
+                                        startActivity(i);
+                                        break;
+                                    }
+                                    else if (user.uid.equals(uid1)){
+                                        Toast.makeText(getApplicationContext(),"User",Toast.LENGTH_SHORT).show();
+                                        Intent i = new Intent(Login.this, kurs.class);
+                                        i.putExtra("level",user.level);
+                                        startActivity(i);
+                                        break;
+                                    }
                                 }
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                        }
-                    };
-                    mDataBase.addValueEventListener(vListener);
+                            }
+                        };
+                        mDataBase.addValueEventListener(vListener);
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),"User not SignIn",Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"User not SignIn",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+            });
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"User not SignIn",Toast.LENGTH_SHORT).show();
+        }
     }
 }

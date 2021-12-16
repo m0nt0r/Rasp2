@@ -30,7 +30,7 @@
                     android:layout_width="408dp"
                     android:layout_height="80dp"
                     android:ems="10"
-                    android:hint="Day"
+                    android:hint="Para(1 - первая и так далее)"
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
 
@@ -39,7 +39,7 @@
                     android:layout_width="408dp"
                     android:layout_height="80dp"
                     android:ems="10"
-                    android:hint="Time"
+                    android:hint="Week"
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
 
@@ -48,7 +48,7 @@
                     android:layout_width="408dp"
                     android:layout_height="80dp"
                     android:ems="10"
-                    android:hint="Podgrup"
+                    android:hint="Day(1 - Понедельник, 2 - Вторник и т.д.)"
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
 
@@ -57,7 +57,7 @@
                     android:layout_width="408dp"
                     android:layout_height="80dp"
                     android:ems="10"
-                    android:hint="Prepod"
+                    android:hint="Time(время начало и конца пары)"
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
 
@@ -66,7 +66,7 @@
                     android:layout_width="408dp"
                     android:layout_height="80dp"
                     android:ems="10"
-                    android:hint="Cabinet"
+                    android:hint="podgrup(1 - первая, 2 - вторая)"
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
 
@@ -75,7 +75,7 @@
                     android:layout_width="408dp"
                     android:layout_height="80dp"
                     android:ems="10"
-                    android:hint="Para"
+                    android:hint="Prepod"
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
 
@@ -84,9 +84,33 @@
                     android:layout_width="408dp"
                     android:layout_height="80dp"
                     android:ems="10"
-                    android:hint="Week"
+                    android:hint="Cabinet"
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/edgrup"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Grupa(сейчас 1 - МС, 2 - Э)"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/edkurs"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Kurs"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/edpredmet"
+                    android:layout_width="408dp"
+                    android:layout_height="80dp"
+                    android:ems="10"
+                    android:hint="Predmet"
+                    android:inputType="textPersonName" />
 
                 <Button
                     android:id="@+id/button4"
@@ -94,13 +118,6 @@
                     android:layout_height="57dp"
                     android:onClick="onClickSave"
                     android:text="Save" />
-
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="match_parent"
-                    android:layout_height="57dp"
-                    android:onClick="onClickRead"
-                    android:text="Read" />
 
             </LinearLayout>
         </ScrollView>

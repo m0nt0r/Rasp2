@@ -26,6 +26,8 @@
         <activity android:name=".weekw" />
         <activity android:name=".day" />
         <activity android:name=".menu_admin" />
+        <activity android:name=".kurs" />
+        <activity android:name=".grup" />
     </application>
 
 </manifest>
